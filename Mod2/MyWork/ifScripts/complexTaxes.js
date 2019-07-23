@@ -30,7 +30,7 @@ function fileTax(income, status) {
 
     netIncome = income - (income * taxRate);
 
-    console.log("Your net income is filing " + status + " is " + netIncome);
+    console.log("Your net income filing " + status + " is " + netIncome);
 }
 
 fileTax(taxableIncome, filingStatus);
