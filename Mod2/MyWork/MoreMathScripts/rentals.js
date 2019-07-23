@@ -3,26 +3,26 @@ Description: Amount of vans needed for people
 */
 "use strict";
 
-var vans;
 var people = 38;
 
-var cost = 250;
-
 function getVans(people) {
-    return Math.ceil(people / 15);
+    var vans = 15;
+
+    return Math.ceil(people / vans);
 }
 
 function getTotal(people) {
+    var cost = 250;
 
-    return Math.ceil(people / 15) * cost;
+    return getVans(people) * cost;
 }
 
 function getPerPerson(people) {
-    return (Math.ceil(people / 15) * cost) / people;
+    return getTotal(people) / people;
 }
 
-console.log(getVans(people));
+console.log("You have " + people + " people and need " + getVans(people) + " van(s)");
 
-console.log(getTotal(people));
+console.log("The total cost is " + getTotal(people));
 
-console.log(Math.round(getPerPerson(people) * 100) / 100);
+console.log("Total split per person is " + Math.round(getPerPerson(people) * 100) / 100);
