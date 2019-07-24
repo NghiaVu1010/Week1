@@ -9,9 +9,11 @@ var studentName = "Betty";
 var studentMajor = "CsCi";
 
 function lookUpMajor(major) {
+    //define variables to save info
     var majorName;
     var departOffice;
 
+    //looks up major info, also taking into account lower cases
     switch(major.toUpperCase()) {
         case "BIOL":
             majorName = "Biology";
@@ -39,6 +41,7 @@ function lookUpMajor(major) {
             break;
     }
 
+    //return info
     return console.log("Student: " + studentName 
         + "\nMajor: " + majorName
         + "\nAdvising Location: " + departOffice);
