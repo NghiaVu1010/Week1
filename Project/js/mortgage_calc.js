@@ -15,16 +15,20 @@ window.onload = function()
         let loan = parseFloat(document.getElementById("loanForm").value);
         let interest = parseFloat(document.getElementById("interestRateForm").value);
         let length = parseFloat(document.getElementById("lengthForm").value);
-        let answer = document.getElementById("answer");
-    
+        let monthlyPayment = document.getElementById("monthlyPayment");
+        let totalLoan = document.getElementById("totalLoan");
+
         //do mortgage calculations based on formula
         let monthlyRate = ((interest / 100) / 12) + 1;
         let totalPayments = length * 12;
         let mortgageRate = 1 - Math.pow(monthlyRate, -totalPayments);
         mortgageRate = (monthlyRate - 1) / mortgageRate;
     
-        //assign value and insert to field
-        let mortgagePayment = mortgageRate * loan;    
-        answer.value = mortgagePayment.toFixed(2);
+        //assign value and insert to field for monthly payments
+        let mortgagePayment = mortgageRate * loan;
+        monthlyPayment.value = mortgagePayment.toFixed(2);
+        
+        //assign value and insert to field for total payments
+        totalLoan.value = (mortgagePayment * totalPayments).toFixed(2);
     }
 };
