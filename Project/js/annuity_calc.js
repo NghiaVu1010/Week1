@@ -15,12 +15,21 @@ window.onload = function()
     const calcAnnuityBtn = document.getElementById("calcAnnuityBtn");
     calcAnnuityBtn.onclick = calculateAnnuityValue;
     
+    const incorrectNum = document.getElementById("incorrectNum");
+
     function calculateAnnuityValue() {
         //grab each of the values and assigns value
         let annuity = parseFloat(document.getElementById("annuityForm").value);
         let discountRate = parseFloat(document.getElementById("discountRateForm").value);
         let length = parseFloat(document.getElementById("annuityLengthForm").value);
         let answer = document.getElementById("answer");
+
+        if (annuity <= 0 || discountRate <= 0 || length <= 0) {
+            return incorrectNum.style.display = 'block';
+        }
+        else {
+            incorrectNum.style.display = 'none';
+        }
 
         discountRate = discountRate / 100;
 
@@ -37,6 +46,8 @@ window.onload = function()
 
     // Bind Click Event Handler to Reset Buttom
     resetBtn.onclick = function() {
+        incorrectNum.style.display = 'none';
+
         // Put cursor in First Name field
         document.getElementById('annuityForm').focus();
     }

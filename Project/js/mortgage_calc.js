@@ -24,6 +24,13 @@ window.onload = function()
         let monthlyPayment = document.getElementById("monthlyPayment");
         let totalLoan = document.getElementById("totalLoan");
 
+        if (loan <= 0 || interest <= 0 || length <= 0) {
+            return incorrectNum.style.display = 'block';
+        }
+        else {
+            incorrectNum.style.display = 'none';
+        }
+
         //do mortgage calculations based on formula
         let monthlyRate = ((interest / 100) / 12) + 1;
         let totalPayments = length * 12;
@@ -42,6 +49,8 @@ window.onload = function()
 
     // Bind Click Event Handler to Reset Buttom
     resetBtn.onclick = function() {
+        incorrectNum.style.display = 'none';
+
         // Put cursor in First Name field
         document.getElementById('loanForm').focus();
     }
