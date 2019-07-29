@@ -3,11 +3,6 @@
 *
 * Author: Neo
 *
-* @param monthlyRate (Number) - Calculate the rate according to formula
-* @param totalPayments (Number) - Total number of payments (in months)
-* @param mortgageRate (Number) - Rate based on formula
-* @param mortgagePayment (Number) - Monthly payments based on loan and rate
-*
 */
 "use strict";
 
@@ -16,6 +11,14 @@ window.onload = function()
     const calcMortgageBtn = document.getElementById("calcMortgageBtn");
     calcMortgageBtn.onclick = calculateMortgagePayment;
     
+    /*
+    * This function calculates the monthly mortgage payment and yearly total
+    *
+    * @param monthlyRate (Number) - Calculate the rate according to formula
+    * @param totalPayments (Number) - Total number of payments (in months)
+    * @param mortgageRate (Number) - Rate based on formula
+    * @param mortgagePayment (Number) - Monthly payments based on loan and rate
+    */
     function calculateMortgagePayment() {
         //grab each of the values and assigns value
         let loan = parseFloat(document.getElementById("loanForm").value);
@@ -24,6 +27,7 @@ window.onload = function()
         let monthlyPayment = document.getElementById("monthlyPayment");
         let totalLoan = document.getElementById("totalLoan");
 
+        //validates for incorrect number
         if (loan <= 0 || interest <= 0 || length <= 0) {
             return incorrectNum.style.display = 'block';
         }
