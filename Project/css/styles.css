@@ -22,3 +22,8 @@ body {
 .green {
     color: #00ff88;
 }
+
+#incorrectNum {
+    display: none;
+    color: #ff0000;
+}
