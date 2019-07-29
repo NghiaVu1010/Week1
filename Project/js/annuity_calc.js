@@ -27,4 +27,12 @@ window.onload = function()
         let annuityPayment = annuity * annuityRate;
         answer.value = annuityPayment.toFixed(2);
     }
+
+    var resetBtn = document.getElementById('resetBtn');
+
+    // Bind Click Event Handler to Reset Buttom
+    resetBtn.onclick = function() {
+        // Put cursor in First Name field
+        document.getElementById('annuityForm').focus();
+    }
 };

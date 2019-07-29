@@ -17,6 +17,25 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-success">
+      <a class="navbar-brand" href="index.html">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        
+      <!-- Links to calculators -->
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Mortgage</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="annuity_calc.html">Annuity</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <img class="center my-2" src="img/calculator.jpg" alt="calculator">
 
     <nav aria-label="breadcrumb">
@@ -45,30 +64,33 @@
             <h2>Mortgage Calculator</h2>
 
             <!-- Required input fields -->
-            <form>
+            <form action="#" method="GET">
               <div class="mx-5">
                 <label for="loanForm">Loan Amount:</label>
-                <input type="text" id="loanForm" required="required" />
+                <input type="text" id="loanForm" name="loanForm" required="required" />
                 
                 <div class="input-group">
                   <label for="interestRateForm">Interest Rate:</label>
-                  <input type="text" id="interestRateForm" required="required" />
+                  <input type="text" id="interestRateForm" name="interestRateForm" required="required" />
                   <div class="input-group-append">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-percent"></i></span>
                   </div>
                 </div>
                 
                 <label for="lengthForm">Mortgage Length <small>(in years)</small>:</label>
-                <input type="text" id="lengthForm" required="required" />
+                <input type="text" id="lengthForm" name="lengthForm" required="required" />
               </div>
+
+              <!-- Calculate button -->
+              <input class="mx-5 mt-3 btn btn-success" id="calcMortgageBtn" type="button" value="Calculate" onclick="calculateMortgagePayment()" />
+
+              <!-- Reset button-->
+              <button type="reset" class="mx-5 mt-3 btn btn-secondary" id="resetBtn">Reset</button>
+  
+              <!-- Disabled monthly payment and total loan cost -->
+              <p class="mt-3 mx-5">Monthly Payments: <input type="text" id="monthlyPayment" disabled/></p>
+              <p class="mt-3 mx-5">Total Loan Cost: <input type="text" id="totalLoan" disabled/></p>
             </form>
-
-            <!-- Calculate button -->
-            <input class="mx-5 mt-3 btn btn-success" id="calcMortgageBtn" type="button" value="Calculate" onclick="calculateMortgagePayment()" />
-
-            <!-- Disabled monthly payment and total loan cost -->
-            <p class="mt-3 mx-5">Monthly Payments: <input type="text" id="monthlyPayment" disabled/></p>
-            <p class="mt-3 mx-5">Total Loan Cost: <input type="text" id="totalLoan" disabled/></p>
           </div>
         </div>
       </div>
