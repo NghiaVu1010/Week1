@@ -2,11 +2,6 @@
 * Description: Calculates annuity payment
 *
 * Author: Neo
-*
-* @param discountRate (Number) - The discount rate for Annuity
-* @param annuityRate (Number) - Calculations done to get the end rate
-* @param annuityPayment (Number) - Present value of annuity
-*
 */
 "use strict";
 
@@ -17,6 +12,16 @@ window.onload = function()
     
     const incorrectNum = document.getElementById("incorrectNum");
 
+    /*
+    * This function calculates the annuity value
+    *
+    * @param discountRate (Number) - The discount rate for Annuity
+    * @param annuityRate (Number) - Calculations done to get the end rate
+    * @param annuityPayment (Number) - Present value of annuity
+    * @param answer (Number) - Used as to pass result
+    * @param annuityRate (Number) - Used to hold the calculations of the rate
+    * @param annuityPayment (Number) - Used to hold result
+    */
     function calculateAnnuityValue() {
         //grab each of the values and assigns value
         let annuity = parseFloat(document.getElementById("annuityForm").value);
@@ -24,6 +29,7 @@ window.onload = function()
         let length = parseFloat(document.getElementById("annuityLengthForm").value);
         let answer = document.getElementById("answer");
 
+        //validates for incorrect number
         if (annuity <= 0 || discountRate <= 0 || length <= 0) {
             return incorrectNum.style.display = 'block';
         }
