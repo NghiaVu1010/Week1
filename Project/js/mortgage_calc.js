@@ -2,6 +2,12 @@
 * Description: Calculates mortgage payment
 *
 * Author: Neo
+*
+* @param monthlyRate (Number) - Calculate the rate according to formula
+* @param totalPayments (Number) - Total number of payments (in months)
+* @param mortgageRate (Number) - Rate based on formula
+* @param mortgagePayment (Number) - Monthly payments based on loan and rate
+*
 */
 "use strict";
 

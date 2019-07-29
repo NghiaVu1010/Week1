@@ -2,6 +2,11 @@
 * Description: Calculates annuity payment
 *
 * Author: Neo
+*
+* @param discountRate (Number) - The discount rate for Annuity
+* @param annuityRate (Number) - Calculations done to get the end rate
+* @param annuityPayment (Number) - Present value of annuity
+*
 */
 "use strict";
 
