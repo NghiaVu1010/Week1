@@ -17,6 +17,25 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-success">
+      <a class="navbar-brand" href="index.html">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        
+      <!-- Links to calculators -->
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="mortgage_calc.html">Mortgage</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Annuity</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <img class="center my-2" src="img/calculator.jpg" alt="calculator">
 
     <nav aria-label="breadcrumb">
@@ -40,29 +59,32 @@
             <h2>Ordinary Annuity Calculator</h2>
 
             <!-- Required input fields -->
-            <form>
+            <form action="#" method="GET">
               <div class="mx-5">
                 <label for="annuityForm">Annuity Amount:</label>
-                <input type="text" id="annuityForm" required="required" />
+                <input type="text" id="annuityForm" name="annuityForm" required="required" />
 
                 <div class="input-group">
                   <label for="discountRateForm">Discount Rate:</label>
-                  <input type="text" id="discountRateForm" required="required" />
+                  <input type="text" id="discountRateForm" name="discountRateForm" required="required" />
                   <div class="input-group-append">
                     <span class="input-group-text" id="basic-addon1"><i class="fas fa-percent"></i></span>
                   </div>
                 </div>
 
                 <label for="annuityLengthForm">Annuity Length <small>(in years)</small>:</label>
-                <input type="text" id="annuityLengthForm" required="required" />
+                <input type="text" id="annuityLengthForm" name="annuityLengthForm" required="required" />
               </div>
-            </form>
-            
-            <!-- Calculate button -->
-            <input class="mx-5 mt-3 btn btn-success" id="calcAnnuityBtn" type="button" value="Calculate" onclick="calculateAnnuityValue()" />
 
-            <!-- Disabled annuity payment -->
-            <p class="mt-3 mx-5">Present value of Annuity: <input type="text" id="answer" disabled/></p>
+              <!-- Calculate button -->
+              <input class="mx-5 mt-3 btn btn-success" id="calcAnnuityBtn" type="button" value="Calculate" onclick="calculateAnnuityValue()" />
+  
+              <!-- Reset button-->
+              <button type="reset" class="mx-5 mt-3 btn btn-secondary" id="resetBtn">Reset</button>
+  
+              <!-- Disabled annuity payment -->
+              <p class="mt-3 mx-5">Present value of Annuity: <input type="text" id="answer" disabled/></p>
+            </form>
           </div>
         </div>
       </div>

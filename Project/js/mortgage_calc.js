@@ -31,4 +31,12 @@ window.onload = function()
         //assign value and insert to field for total payments
         totalLoan.value = (mortgagePayment * totalPayments).toFixed(2);
     }
+
+    var resetBtn = document.getElementById('resetBtn');
+
+    // Bind Click Event Handler to Reset Buttom
+    resetBtn.onclick = function() {
+        // Put cursor in First Name field
+        document.getElementById('loanForm').focus();
+    }
 };
